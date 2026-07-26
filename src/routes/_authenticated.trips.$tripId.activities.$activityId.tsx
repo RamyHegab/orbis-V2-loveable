@@ -183,7 +183,7 @@ function ActivityDetail() {
           ) : (
             <p className="text-sm text-muted-foreground">
               No templates for this activity type. {" "}
-              <Link to="/templates" className="text-primary hover:underline">Create one</Link>.
+              <Link to="/forms" className="text-primary hover:underline">Create one</Link>.
             </p>
           )}
 

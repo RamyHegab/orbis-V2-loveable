@@ -111,7 +111,7 @@ function PlanningPage() {
         description="Plan your recruitment cycle: activities, events, costs and travellers."
         actions={isAdmin ? <ArchiveCycleDialog /> : undefined}
       />
-      <Tabs value={tab} onValueChange={setTab}>
+      <Tabs value={tab} onValueChange={(v) => setTab(v as typeof tab)}>
         <TabsList>
           <TabsTrigger value="timeline"><LayoutList className="h-4 w-4 mr-1" /> Timeline</TabsTrigger>
           <TabsTrigger value="calendar"><CalendarIcon className="h-4 w-4 mr-1" /> Calendar</TabsTrigger>
