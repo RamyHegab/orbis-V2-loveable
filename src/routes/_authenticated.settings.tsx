@@ -8,13 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
-import { useIsAdmin } from "@/hooks/use-auth";
+import { useIsAdmin, useCan } from "@/hooks/use-auth";
 import { CURRENCY_OPTIONS, currencySymbol } from "@/lib/currency";
 import { toast } from "sonner";
 import { BrandingCard } from "@/components/branding-card";
 import { StartOnboardingDialog } from "@/components/start-onboarding-dialog";
 import { Link } from "@tanstack/react-router";
-import { ClipboardCheck, ExternalLink, Plus, ChevronDown } from "lucide-react";
+import { ClipboardCheck, ExternalLink, Plus, ChevronDown, Users as UsersIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 function SettingsSection({
@@ -57,6 +57,7 @@ export const Route = createFileRoute("/_authenticated/settings")({
 
 function SettingsPage() {
   const isAdmin = useIsAdmin();
+  const canManageUsers = useCan("can_manage_users");
 
 
 
