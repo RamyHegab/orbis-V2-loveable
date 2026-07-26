@@ -83,17 +83,21 @@ function SettingsPage() {
       >
         <AgentOnboardingBody isAdmin={isAdmin} />
       </SettingsSection>
+      {canManageUsers && (
+        <SettingsSection title="Users & permissions" icon={<UsersIcon className="h-4 w-4" />}>
+          <div className="space-y-3">
+            <p className="text-sm text-muted-foreground">
+              Invite team members, set line managers, assign agents, and control permissions.
+            </p>
+            <Button asChild variant="outline">
+              <Link to="/users">
+                Open user management <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </SettingsSection>
+      )}
 
-
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Coming soon</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">
-          Manage team members, roles, and branding from this page.
-        </CardContent>
-      </Card>
     </PageContainer>
   );
 }
